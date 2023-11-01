@@ -8,22 +8,24 @@ public class AIController : MonoBehaviour
 {
     public StateMachine AIStateMachine { get; private set; }
     
-   IState IdleState { get; private set; }
+   IState IdleState { get; set; }
 
     // Start is called before the first frame update
     void Start()
     {
-        StateMachine = AIStateMachine;
-        moveto();
-        turnto();
+        AIStateMachine = new StateMachine();
+        MoveTo();
+        TurnTo();
+        // Possibly turn these to RotateTo, SeekTo, etc 
+        // Keyboard shortcut to rename a name in all instances Ctrl + R + R 
     }
 
-    private void turnto()
+    private void TurnTo()
     {
         throw new NotImplementedException();
     }
 
-    private void moveto()
+    private void MoveTo()
     {
         throw new NotImplementedException();
     }
