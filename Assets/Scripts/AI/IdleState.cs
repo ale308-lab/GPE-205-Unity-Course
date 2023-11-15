@@ -8,21 +8,21 @@ public class IdleState : IState
     {
 
         Debug.Log("This does nothing.");
-        // This should do nothing
+        // This should do nothing, it's the Base state
     }
     public void OnEnter()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Starting Idle");
     }
 
     public void OnExit()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Ending Idle");
     }
 
     public void Tick()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Idling");
     }
 
     // Start is called before the first frame update

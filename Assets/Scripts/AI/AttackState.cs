@@ -8,25 +8,30 @@ public class AttackState : IState
     IState chaseState;
     IState IdleState;
     IState attackState;
-    public AttackState()
+
+    AIBaseController AttackRef;
+    public AttackState(AIBaseController Parent)
     {
-        
-        Debug.Log("This does nothing.");
-        // This should do nothing
+        AttackRef = Parent;
+        Debug.Log("This is the attack state.");
+        // This should make the AI fire at the player
+
+
+        // Always go through the set state method to change states 
     }
     public void OnEnter()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Starting Attack");
     }
 
     public void OnExit()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Ending Attack");
     }
 
     public void Tick()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Attacking");
     }
 
     // Start is called before the first frame update

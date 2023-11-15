@@ -11,22 +11,22 @@ public class ChaseState : IState
     public ChaseState()
     {
 
-        Debug.Log("This does nothing.");
-        // This should do nothing
+        Debug.Log("This is the chase state.");
+        // This should make the AI chase the player once the AI sees the player
     }
     public void OnEnter()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Starting Chase");
     }
 
     public void OnExit()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Ending Chase");
     }
 
     public void Tick()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Chasing");
     }
 
     public void MoveTo()
