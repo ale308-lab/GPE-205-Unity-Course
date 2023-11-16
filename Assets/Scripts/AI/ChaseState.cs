@@ -5,17 +5,21 @@ using UnityEngine;
 
 public class ChaseState : IState
 {
+    AIBaseController ChaseRef;
     IState chaseState;
-    IState IdleState;
-    IState AttackState;
-    public ChaseState()
+    
+    public ChaseState(AIBaseController Parent)
     {
-
+        ChaseRef = Parent;
         Debug.Log("This is the chase state.");
+        ChaseRef = Parent.GetComponent<PlayerController>();
+        // Just finish this and the Idle state, then work on the AI senses 
+        
         // This should make the AI chase the player once the AI sees the player
     }
     public void OnEnter()
     {
+        
         Debug.Log("Starting Chase");
     }
 
@@ -27,6 +31,7 @@ public class ChaseState : IState
     public void Tick()
     {
         Debug.Log("Chasing");
+
     }
 
     public void MoveTo()

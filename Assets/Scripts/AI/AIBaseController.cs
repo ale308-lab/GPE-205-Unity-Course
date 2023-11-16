@@ -6,6 +6,10 @@ using UnityEngine;
 
 public class AIBaseController : MonoBehaviour
 {
+    public TankPawn EntireTankPawn;
+    public TankShooter ShooterRef;
+    public PlayerController PlayerControllerScript;
+    // Make sure these references are public
     public StateMachine AIStateMachine { get; set; }
     
   
@@ -13,10 +17,11 @@ public class AIBaseController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-       
-
+        EntireTankPawn = this.gameObject.GetComponent<TankPawn>();
+        ShooterRef = this.gameObject.GetComponent<TankShooter>();
+        // Make sure when adding new components to reference this with the spefific game objects for said components 
         
         
         // Possibly turn these to RotateTo, SeekTo, etc 
@@ -42,12 +47,12 @@ public class AIBaseController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AIStateMachine.Tick();
+       
 
 
     }
 
-    public void SwitchState(AIBaseController state)
+    public void SwitchState(IState chaseState, AIBaseController state)
     {
         
 

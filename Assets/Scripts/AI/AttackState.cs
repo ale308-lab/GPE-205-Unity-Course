@@ -5,15 +5,19 @@ using UnityEngine;
 public class AttackState : IState
 
 {
+    
+
     IState chaseState;
     IState IdleState;
     IState attackState;
 
     AIBaseController AttackRef;
+    TankShooter ShooterRef;
     public AttackState(AIBaseController Parent)
     {
         AttackRef = Parent;
         Debug.Log("This is the attack state.");
+        ShooterRef = Parent.gameObject.GetComponent<TankShooter>();
         // This should make the AI fire at the player
 
 
@@ -32,7 +36,10 @@ public class AttackState : IState
     public void Tick()
     {
         Debug.Log("Attacking");
+        Debug.Log(AttackRef.EntireTankPawn);
+        ShooterRef.Shoot(AttackRef.EntireTankPawn.shellPrefab, AttackRef.EntireTankPawn.fireForce, AttackRef.EntireTankPawn.damageDone, AttackRef.EntireTankPawn.shellLifespan);
     }
 
+    
     // Start is called before the first frame update
 }
