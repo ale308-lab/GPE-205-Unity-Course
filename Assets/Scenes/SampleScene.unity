@@ -1366,7 +1366,7 @@ MonoBehaviour:
   EntireTankPawn: {fileID: 0}
   ShooterRef: {fileID: 0}
   MovementRef: {fileID: 0}
-  TargetTransform: {fileID: 421542164}
+  TargetTransform: {fileID: 0}
   speed: 1
 --- !u!114 &2126388939
 MonoBehaviour:

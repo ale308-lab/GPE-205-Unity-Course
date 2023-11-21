@@ -14,7 +14,7 @@ public class AIBaseController : MonoBehaviour
     public StateMachine AIStateMachine { get; set; }
     public float speed = 1.0f;
   
-
+    // To fix, 11/20/2023 The chase state no longer works, might have to refactor something
 
 
     // Start is called before the first frame update
@@ -54,7 +54,7 @@ public class AIBaseController : MonoBehaviour
         ///Summary
         /// This is an attempt to figure how how to rotate the AI to the player 
         // This will determine which direction to rotate towards
-        Vector3 targetDirection = TargetTransform.position - transform.position;
+       /* Vector3 targetDirection = TargetTransform.position - transform.position;
 
         // The step size is equal to speed times frame time
         float singleStep = speed * Time.deltaTime;
@@ -66,7 +66,7 @@ public class AIBaseController : MonoBehaviour
         Debug.DrawRay(transform.position, newDirection, Color.red);
 
         // Calculate a rotation a step closer to the target and will apply rotation to this object
-        transform.rotation = Quaternion.LookRotation(newDirection);
+        transform.rotation = Quaternion.LookRotation(newDirection);*/
 
     }
 

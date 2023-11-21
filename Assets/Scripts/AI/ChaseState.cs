@@ -6,7 +6,7 @@ using UnityEngine;
 public class ChaseState : IState
 {
     AIBaseController ChaseRef;
-
+    public GameManager gameManager;
 
 
     IState chaseState;
@@ -22,7 +22,7 @@ public class ChaseState : IState
     }
     public void OnEnter()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         Debug.Log("Starting Chase");
     }
 
@@ -33,9 +33,14 @@ public class ChaseState : IState
 
     public void Tick()
     {
-        Debug.Log("Chasing");
-        ChaseRef.EntireTankPawn.MoveForward();
         
+        ChaseRef.EntireTankPawn.MoveForward();
+
+        // Make the AI tank pawn rotate towards the player by going through the GameManagers PlayerController reference.
+        ChaseRef.EntireTankPawn.transform.LookAt(gameManager.playerOne.pawn.transform);
+        
+
+
         //ChaseRef.MovementRef();
         // Have this follow from the tank movement which needs to be decoupled from the inputs 
         // ^ Done. 

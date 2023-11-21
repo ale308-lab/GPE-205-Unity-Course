@@ -12,6 +12,7 @@ public class PlayerController : Controller
     public KeyCode switchKey;
     public float speed = 10.0f;
     public float rotateSpeed = 180f;
+    public GameObject Newplayer;
     // Start is called before the first frame update
     public override void Start()
     {

@@ -28,9 +28,13 @@ public class AI1 : AIBaseController
 
         BaseState = new IdleState();
 
-        CreateTransition(ChaseState, AttackState, When);
-        // AIStateMachine.SetState(ChaseState);
+        //CreateTransition(ChaseState, AttackState, When);
+        AIStateMachine.SetState(ChaseState);
 
+        ///
+        /// Next is the flee state. have a list of transforms that the ai pawn can look at once it reaches a threshold of health 
+        /// Next is the patrol state, have a list of transforms the ai pawn could move to until it spots the player
+        ///
 
     }
 

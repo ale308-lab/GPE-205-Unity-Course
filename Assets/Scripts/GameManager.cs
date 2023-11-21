@@ -62,6 +62,9 @@ public class GameManager : MonoBehaviour
 
         // Hook them up together
         newController.pawn = newPawn;
+        playerOne = newController as PlayerController;
+        Debug.Log(playerOne);
     }
+
 
 }
