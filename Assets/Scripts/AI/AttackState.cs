@@ -38,6 +38,7 @@ public class AttackState : IState
         Debug.Log("Attacking");
         Debug.Log(AttackRef.EntireTankPawn);
         ShooterRef.Shoot(AttackRef.EntireTankPawn.shellPrefab, AttackRef.EntireTankPawn.fireForce, AttackRef.EntireTankPawn.damageDone, AttackRef.EntireTankPawn.shellLifespan);
+        // This causes the AI to shoot once its state is activated
     }
 
     

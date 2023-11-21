@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthPickUp : MonoBehaviour
+public class HealthPickUp : PickUp
 {
-    // Start is called before the first frame update
-    void Start()
+    public HealthPickUp powerUp;
+
+    public override void OnTriggerEnter(Collider other)
     {
-        
+       
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

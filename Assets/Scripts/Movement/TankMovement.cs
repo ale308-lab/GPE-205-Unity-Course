@@ -15,6 +15,8 @@ public class TankMovement : MonoBehaviour
     public float speed = 10.0f;
     public float rotateSpeed = 10f;
     // Start is called before the first frame update
+
+    // Maybe have it reference the player inputs, but have a dependency injection for when the AI has to move, not just the player. Possibly remove the keycodes? 
     void Start()
     {
           
@@ -29,27 +31,36 @@ public class TankMovement : MonoBehaviour
 
         /// Summary 
         ///
-        /// This is the movement code, bit basic, but it just lets the tank transform its position. 
-        if (Input.GetKey(moveForwardKey))
-        {
-            transform.Translate(0, 0, transAmount);
-        }
-        if (Input.GetKey(moveBackwardKey))
-        {
-            transform.Translate(0, 0, -transAmount);
-        }
-        if (Input.GetKey(moveClockWiseKey))
-        {
-            transform.Rotate(0, -rotateAmount, 0);
-        }
-        if (Input.GetKey(moveCounterClockWiseKey))
-        {
-            transform.Rotate(0, rotateAmount, 0);
-        }
+        /// This is the movement code, bit basic, but it just lets the tank transform its position. I refactored the code to not require the player inputs.
+        /// 11/20/2023 
+      
+
+
+
         
+    }
+    public void MoveForward()
+    {
+        var transAmount = speed * Time.deltaTime;
+        transform.Translate(0, 0, transAmount);
 
+    }
 
+    public void MoveBackward()
+    {
+        var transAmount = speed * Time.deltaTime;
+        transform.Translate(0, 0, -transAmount);
+    }
 
+    public void RotateLeft()
+    {
+        var rotateAmount = rotateSpeed * Time.deltaTime;
+        transform.Rotate(0, -rotateAmount, 0);
+    }
 
+    public void RotateRight()
+    {
+        var rotateAmount = rotateSpeed * Time.deltaTime;
+        transform.Rotate(0, rotateAmount, 0);
     }
 }

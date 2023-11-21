@@ -6,13 +6,16 @@ using UnityEngine;
 public class ChaseState : IState
 {
     AIBaseController ChaseRef;
+
+
+
     IState chaseState;
     
     public ChaseState(AIBaseController Parent)
     {
         ChaseRef = Parent;
         Debug.Log("This is the chase state.");
-        ChaseRef = Parent.GetComponent<PlayerController>();
+        //ChaseRef = Parent.gameObject.GetComponent<this>();
         // Just finish this and the Idle state, then work on the AI senses 
         
         // This should make the AI chase the player once the AI sees the player
@@ -31,6 +34,12 @@ public class ChaseState : IState
     public void Tick()
     {
         Debug.Log("Chasing");
+        ChaseRef.EntireTankPawn.MoveForward();
+        
+        //ChaseRef.MovementRef();
+        // Have this follow from the tank movement which needs to be decoupled from the inputs 
+        // ^ Done. 
+
 
     }
 

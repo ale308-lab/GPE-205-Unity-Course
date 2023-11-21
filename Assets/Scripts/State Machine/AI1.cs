@@ -29,7 +29,7 @@ public class AI1 : AIBaseController
         BaseState = new IdleState();
 
         CreateTransition(ChaseState, AttackState, When);
-        AIStateMachine.SetState(ChaseState);
+        // AIStateMachine.SetState(ChaseState);
 
 
     }

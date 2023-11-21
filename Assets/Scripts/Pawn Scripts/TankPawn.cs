@@ -9,7 +9,8 @@ public class TankPawn : Pawn
     public float fireForce;
     public float damageDone;
     public float shellLifespan;
-    
+    public float speed = 10.0f;
+    public float rotateSpeed = 10f;
 
     [SerializeField]
     private List<GameObject> _ammoTypes;
@@ -38,21 +39,25 @@ public class TankPawn : Pawn
 
     public override void MoveForward()
     {
-        Debug.Log("Move Forward");
+        var transAmount = speed * Time.deltaTime;
+        transform.Translate(0, 0, transAmount);
 
     }
     public override void MoveBackward()
     {
-        Debug.Log("Move Backward");
-        
+        var transAmount = speed * Time.deltaTime;
+        transform.Translate(0, 0, -transAmount);
+
     }
     public override void RotateClockWise()
     {
-        Debug.Log("Rotate ClockWise ");
+        var rotateAmount = rotateSpeed * Time.deltaTime;
+        transform.Rotate(0, -rotateAmount, 0);
     }
     public override void RotateCounterClockWise()
     {
-        Debug.Log("Rotate CounterClockWise ");
+        var rotateAmount = rotateSpeed * Time.deltaTime;
+        transform.Rotate(0, rotateAmount, 0);
     }
 
     public override void Shoot()

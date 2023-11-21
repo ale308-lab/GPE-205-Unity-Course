@@ -227,9 +227,6 @@ PrefabInstance:
       addedObject: {fileID: 4694312613872348726}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3fc5f8727af404b49bf2f2742eca3b82, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3535642503340284569}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3fc5f8727af404b49bf2f2742eca3b82, type: 3}
-      insertIndex: -1
       addedObject: {fileID: -1862284180313637110}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3fc5f8727af404b49bf2f2742eca3b82, type: 3}
       insertIndex: -1
@@ -263,6 +260,8 @@ MonoBehaviour:
   fireForce: 1000
   damageDone: 1000
   shellLifespan: 10
+  speed: 10
+  rotateSpeed: 100
   _ammoTypes:
   - {fileID: 8451179062060904862, guid: a59c307901cfee442bd397b28a03e7fa, type: 3}
   - {fileID: 8451179062060904862, guid: a2b25d9e9c5a69349bc4f0516ba6664a, type: 3}
@@ -329,26 +328,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firepointTransform: {fileID: 1151972663473034625}
---- !u!114 &3535642503340284569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6863769864104648938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae3b4bbfb17fad349be5f84c188632b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveForwardKey: 119
-  moveBackwardKey: 115
-  moveClockWiseKey: 97
-  moveCounterClockWiseKey: 100
-  shootKey: 0
-  switchKey: 0
-  speed: 5
-  rotateSpeed: 100
 --- !u!114 &-1862284180313637110
 MonoBehaviour:
   m_ObjectHideFlags: 0
