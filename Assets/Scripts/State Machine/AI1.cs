@@ -13,13 +13,19 @@ public class AI1 : AIBaseController
 
     IState FleeState { get; set; }
 
+    IState PatrolState { get; set; }
+
+
+    public List<Transform> RouteList;
+
     // Start is called before the first frame update
     void Start()
     {
         AIStateMachine = new StateMachine();
 
-        FleeState = new FleeState(this, new Vector3(1, 1, 1));
-        
+        FleeState = new FleeState(this);
+
+        PatrolState = new PatrolState(this, RouteList);
 
         AttackState = new AttackState(this);
 
@@ -29,10 +35,11 @@ public class AI1 : AIBaseController
         BaseState = new IdleState();
 
         //CreateTransition(ChaseState, AttackState, When);
-        AIStateMachine.SetState(ChaseState);
+        AIStateMachine.SetState(PatrolState);
 
         ///
         /// Next is the flee state. have a list of transforms that the ai pawn can look at once it reaches a threshold of health 
+        /// Flee State is done, just need to add a condition 
         /// Next is the patrol state, have a list of transforms the ai pawn could move to until it spots the player
         ///
 

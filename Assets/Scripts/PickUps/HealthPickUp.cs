@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthPickUp : PickUp
 {
-    public HealthPickUp powerUp;
+    public HealthPowerUp powerUp;
 
     public override void OnTriggerEnter(Collider other)
     {
