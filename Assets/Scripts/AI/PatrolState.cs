@@ -8,8 +8,8 @@ using UnityEngine;
     AIBaseController PatrolRef;
     public List<Transform> PatrolRoute;
     //int 
-    int CurrentIndex = 1;
-
+    int CurrentIndex = 0;
+   
 
 
 
@@ -49,17 +49,35 @@ using UnityEngine;
         // This is the if statement that accounts for the Pawn's position, then the PatrolRoute's CurrentIndex's position, if it's less than one meter, it will move on
         if (Vector3.Distance(PatrolRef.EntireTankPawn.transform.position, PatrolRoute[CurrentIndex].position) < 1)
         {
+            Debug.Log(" CurrentIndex " + CurrentIndex);
+            CurrentIndex++;
+            if (CurrentIndex >= PatrolRoute.Count)
+            {
+                CurrentIndex = 0;    
+                    
+            }
+            // Basically we need a function that gets to the last element in the list, go back to the first
+            // Needs to be an if statement with a conditional to tell it when it got to the last element
+            //CurrrentIndex + 3 = CurrentIndex 0;
+
             // Pawn < CurrentIndex
 
 
             // Main thing it needs is a way to move from one list to the next
             // So far, all I know is that it needs to have a +1 function to the list
         }
-         (Vector3.Distance(PatrolRef.EntireTankPawn.transform.position, PatrolRoute[CurrentIndex, ++1].position) < 1)
-        {
-           
+        //(Vector3.Distance(PatrolRef.EntireTankPawn.transform.position, PatrolRoute[CurrentIndex++].position) < 1)
+       
 
-        }
+        //if (Vector3.Distance(PatrolRef.EntireTankPawn.transform.position, PatrolRoute[CurrentIndex + 2].position) < 1)
+        //{
+        //    CurrentIndex = CurrentIndex + 3;
+       //     Debug.Log(" Returning to first current Index ");
+
+       // }
+
+
+
 
 
         PatrolRef.EntireTankPawn.MoveForward();
