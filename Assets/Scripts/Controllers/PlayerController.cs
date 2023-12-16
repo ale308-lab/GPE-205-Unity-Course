@@ -29,6 +29,7 @@ public class PlayerController : Controller
             }
 
         }
+       
     }
 
     public void OnDestroy()
@@ -46,7 +47,7 @@ public class PlayerController : Controller
             }
 
         }
-
+       
     }
 
     // Update is called once per frame

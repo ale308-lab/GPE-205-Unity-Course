@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        SpawnPlayer();
+
         if (instance == null)
         {
             instance = this;
@@ -33,12 +35,14 @@ public class GameManager : MonoBehaviour
 
         }
         players = new List<PlayerController>();
+
+
     }
 
     // This will spawn the player
     private void Start()
     {
-        SpawnPlayer();
+        
     }
 
     public void SpawnPlayer()

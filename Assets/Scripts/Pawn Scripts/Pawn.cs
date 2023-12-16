@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Pawn : MonoBehaviour
 {
+
     /// <summary>
     /// The variable that will control turn speed of the player 
     /// </summary>
