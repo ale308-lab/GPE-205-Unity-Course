@@ -33,12 +33,16 @@ public abstract class Pawn : MonoBehaviour
     /// These abstacts are all the basic functions I will be using for the tank movement. 
     /// </summary>
     public abstract void MoveForward();
+
     public abstract void MoveBackward();
+
     public abstract void RotateClockWise();
 
     public abstract void RotateCounterClockWise();
 
     public abstract void Shoot();
+
+    public abstract void RotateTowards(Vector3 targetPosition);
 
     public abstract void Switch();
 

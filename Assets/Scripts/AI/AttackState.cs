@@ -19,8 +19,6 @@ public class AttackState : IState
         Debug.Log("This is the attack state.");
         ShooterRef = Parent.gameObject.GetComponent<TankShooter>();
         // This should make the AI fire at the player
-
-
         // Always go through the set state method to change states 
     }
     public void OnEnter()

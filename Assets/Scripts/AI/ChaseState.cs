@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class ChaseState : IState
 {
@@ -13,11 +14,10 @@ public class ChaseState : IState
     
     public ChaseState(AIBaseController Parent)
     {
+        // Just finish this and the Idle state, then work on the AI senses 
         ChaseRef = Parent;
         Debug.Log("This is the chase state.");
         //ChaseRef = Parent.gameObject.GetComponent<this>();
-        // Just finish this and the Idle state, then work on the AI senses 
-        
         // This should make the AI chase the player once the AI sees the player
     }
     public void OnEnter()
